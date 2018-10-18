@@ -28,3 +28,8 @@ config/master.key
 
 # Ignore auto-generate file from IDE
 .idea/
+
+# Ignore precompiled javascript packs
+/public/packs
+/public/packs-test
+/public/assets

@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+    - POSTGRES_PASSWORD=unicorn
+    ports:
+    - "3456:5432"
+    container_name: artibit-db
+  web:
+    image: artibit-server
+    build: .
+    command: ["./start.sh"]
+    volumes:
+    - .:/usr/src/app
+    ports:
+    - "3000:3000"
+    container_name: artibit-web
+    depends_on:
+    - db
