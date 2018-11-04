@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2018_10_21_182207) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "surname"
     t.text "body"
     t.json "details"
     t.datetime "created_at", null: false
@@ -40,10 +39,11 @@ ActiveRecord::Schema.define(version: 2018_10_21_182207) do
 
   create_table "exhibitions", force: :cascade do |t|
     t.string "name"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.string "image"
     t.text "body"
     t.json "details"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

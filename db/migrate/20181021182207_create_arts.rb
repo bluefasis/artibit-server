@@ -2,7 +2,6 @@ class CreateArts < ActiveRecord::Migration[5.2]
   def change
     create_table :artists do |t|
       t.string :name
-      t.string :surname
       t.text :body
       t.json :details
 
@@ -11,10 +10,11 @@ class CreateArts < ActiveRecord::Migration[5.2]
 
     create_table :exhibitions do |t|
       t.string :name
-      t.datetime :start_date
-      t.datetime :end_date
+      t.string :image
       t.text :body
       t.json :details
+      t.datetime :start_date
+      t.datetime :end_date
 
       t.timestamps
     end
