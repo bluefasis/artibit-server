@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get '/download/whole/:id', to: 'application#whole'
-  get '/details/artist/:id', to: 'application#artist'
-  get '/details/art/:id', to: 'application#art'
+  path = '/download'
+  get path + '/overall/:id', to: 'application#overall'
+  get path + '/artist/:id', to: 'application#artist'
+  get path + '/art/:id', to: 'application#art'
 end

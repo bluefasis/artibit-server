@@ -8,7 +8,7 @@ class Art < ApplicationRecord
 
   def as_json(options = {})
     super(options)
-        .except("created_at", "updated_at")
-        .merge(artist: artist)
+        .except("artist_id", "created_at", "updated_at")
+        .merge(artist: {id: artist.id, name: artist.name})
   end
 end

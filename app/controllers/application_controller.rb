@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # GET /whole/:id
-  def whole
+  # GET /overall/:id
+  def overall
     @exhibition = Exhibition.find(params[:id])
     data = {
         exhibition: @exhibition,
