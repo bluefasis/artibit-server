@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get '/download/whole/:id', to: 'application#whole'
+  get '/details/artist/:id', to: 'application#artist'
+  get '/details/art/:id', to: 'application#art'
 end

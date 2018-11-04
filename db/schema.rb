@@ -10,9 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_10_21_182207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.json "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "arts", force: :cascade do |t|
+    t.bigint "exhibition_id"
+    t.bigint "artist_id"
+    t.string "name"
+    t.string "image"
+    t.string "subtitle"
+    t.text "body"
+    t.json "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_arts_on_artist_id"
+    t.index ["exhibition_id"], name: "index_arts_on_exhibition_id"
+  end
+
+  create_table "exhibitions", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.text "body"
+    t.json "details"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
