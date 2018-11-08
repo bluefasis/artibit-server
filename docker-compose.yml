@@ -3,7 +3,7 @@ services:
   db:
     image: postgres
     environment:
-    - POSTGRES_PASSWORD=unicorn
+    - POSTGRES_PASSWORD=younicorn
     ports:
     - "3456:5432"
     container_name: artibit-db

@@ -20,13 +20,13 @@ default: &default
   host: <%= ENV.fetch("RDS_ENDPOINT") { :db } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: unicorn
+  password: younicorn
 
 development:
   <<: *default
   database: artibit_development
   username: <%= ENV.fetch("RDS_DB_USER") { :postgres } %>
-  password: <%= ENV.fetch("RDS_DB_PASS") { 'unicorn' }%>
+  password: <%= ENV.fetch("RDS_DB_PASS") { 'younicorn' }%>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
